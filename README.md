@@ -1,5 +1,11 @@
 # ChromeDebugLnk
 
+## 关于Chrome 136 及以上版本的远程调试开启
+ai说的：自 Chrome 136（2024 年 3 月发布）起，Google 对 --remote-debugging-port 和 --remote-debugging-pipe 标志的行为进行了更改。作为一项安全措施，这些标志在尝试调试默认 Chrome 用户数据目录（%LocalAppData%\Google\Chrome\User Data）时不再生效，必须配合 --user-data-dir 指定一个非默认的用户数据目录。
+
+如何解决？这么明显了，自己测试吧，别舔着个b脸就开始要.
+
+
 ## 中文介绍
 
 **ChromeDebugLnk** 是一个基于 Go 语言开发的 Windows 工具，专门用于修改桌面、任务栏或用户指定路径中的浏览器快捷方式（支持 Chrome、Edge 和 Opera），以启用远程调试模式。该工具需要以管理员权限（UAC）运行，以绕过如 360 安全卫士等安全软件的限制，允许无缝修改快捷方式的属性。此外，它还提供通过修改 Windows 注册表来限制 Chrome 浏览器隐身模式的功能，适合需要特定浏览器配置的开发或管理场景。
